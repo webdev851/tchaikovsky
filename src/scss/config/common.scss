@@ -1,0 +1,36 @@
+// Заголовки, общие блоки и проче...
+
+html,
+body {
+  min-width: 320px;
+  width: 100%;
+  font-family: sans-serif;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-font-color);
+  font-size: var(--bs-font-size);
+  font-weight: var(--bs-font-weight);
+  line-height: var(--bs-line-height);
+}
+
+.visually-hidden,
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  text-decoration: none;
+  user-select: none;
+}

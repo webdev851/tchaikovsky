@@ -1,0 +1,15 @@
+@use 'sass:math';
+
+// Подключение шрифтов
+@import 'config/fonts';
+
+// Общие кастомные стили
+@import 'config/common';
+
+// Подключение оригинальных стилей с webflow (немного модифицированы)
+@import 'components/original-styles-modified';
+
+// Подключение наших стилей
+
+@import 'components/igor';
+@import 'components/anton';

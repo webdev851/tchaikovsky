@@ -1,0 +1,14 @@
+.vscode
+.idea
+.temporary_cache
+tchaikovsky.code-workspace
+git-tips.txt
+pxl
+temp
+dist
+app
+node_modules
+package-lock.json
+gulp/version.json
+www.tchaikovsky.house.rar
+www.tchaikovsky.house
