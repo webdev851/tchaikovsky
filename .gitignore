@@ -6,6 +6,7 @@ git-tips.txt
 pxl
 temp
 dist
+build
 app
 node_modules
 package-lock.json
