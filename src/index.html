@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-
-<html data-wf-domain="tchaikovsky.webflow.io" data-wf-page="63e507244eda1e17924c7c9c" data-wf-site="63e507244eda1e43e64c7c9d" lang="ru">
-
-
 @@include('html/head.html', {
-'title': 'Музей П.И. Чайковского'
+  'title': 'Музей П.И. Чайковского',
+  'pageName': 'front',
+  'data-wf-page': '63e507244eda1e17924c7c9c'
 })
-
-<body class="body">
 
 @@include('html/header.html')
 
+<main>
 <div class="section-hero">
   <div data-delay="6000" data-animation="slide" class="slider-hero w-slider" data-autoplay="true" data-easing="ease-out" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="1000" data-infinite="true">
     <div class="w-slider-mask">
@@ -1478,6 +1474,8 @@
 </div>
 
 @@include('html/contacts-and-map.html')
+
+</main>
 @@include('html/footer.html')
 @@include('html/scripts.html')
 
