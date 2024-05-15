@@ -1212,7 +1212,7 @@
         var namespace = ".w-webflow-badge";
         var location = window.location;
         var isPhantom = /PhantomJS/i.test(navigator.userAgent);
-        var fullScreenEvents = "fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange";
+        var fullScreenEvents = "fullscreenchange webkitfullscreenchange mozfullscreenchange w-mod-jsmsfullscreenchange";
 
         api.ready = function() {
           var shouldBrand = $html.attr("data-wf-status");

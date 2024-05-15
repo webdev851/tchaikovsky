@@ -1,4 +1,4 @@
-body.pushkinskaya-karta-page {
+main.front-page {
 	a.main {
 		font-size: 16px;
 		color: #000000;
@@ -24,7 +24,33 @@ body.pushkinskaya-karta-page {
 	}
 }
 
-body.afisha {
+main.pushkinskaya-karta-page {
+	a.main {
+		font-size: 16px;
+		color: #000000;
+		background-color: rgb(243, 200, 52);
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+		padding-bottom: 8px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 8px;
+		text-decoration: none;
+		text-decoration-line: none;
+		transition-delay: 0s;
+		transition-duration: 0.2s;
+		transition-property: all;
+	}
+
+	a.main:hover {
+		background-color: #ffffff;
+		border-color: #F3C834;
+	}
+}
+
+main.afisha {
 	a.ticket {
 		font-size: 16px;
 		background-color: rgb(31, 31, 30);
