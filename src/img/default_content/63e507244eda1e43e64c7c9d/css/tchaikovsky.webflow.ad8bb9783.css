@@ -5660,7 +5660,7 @@ blockquote {
 }
 
 .slide-hero._2 {
-  background-image: url("https://assets-global.website-files.com/63e507244eda1e43e64c7c9d/647edae5d97ffc4bb7b81e7d_Frame%2040302%20(1).webp");
+  background-image: url("img/default_content/63e507244eda1e43e64c7c9d/647edae5d97ffc4bb7b81e7d_Frame%2040302%20(1).webp");
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9968,7 +9968,7 @@ blockquote {
   }
 
   .slide-hero._2 {
-    background-image: url("../647ee08244a6f43b1d3da845_Главная 321.webp"), url("https://assets-global.website-files.com/63e507244eda1e43e64c7c9d/647edae5d97ffc4bb7b81e7d_Frame%2040302%20(1).webp");
+    background-image: url("../647ee08244a6f43b1d3da845_Главная 321.webp"), url("img/default_content/63e507244eda1e43e64c7c9d/647edae5d97ffc4bb7b81e7d_Frame%2040302%20(1).webp");
     background-position: 50% 100%, 66% 0;
     background-size: cover, auto 500px;
   }

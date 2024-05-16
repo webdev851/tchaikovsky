@@ -66,3 +66,53 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
 });
+
+
+
+
+const header = document.querySelector('.navbar'),
+      headerOffset = header.offsetTop,
+      burger = document.querySelector('.burger'),
+      menu = document.querySelector('.nav-menu'),
+      dropdownItems = document.querySelectorAll('.dropdown-menu');
+
+let lastScrollY = window.pageYOffset;
+const firstSectionHeight = document.querySelector('.section-hero').offsetHeight;
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.pageYOffset;
+  let opacity = Math.min(currentScrollY / firstSectionHeight, 0.8);
+  
+  header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+
+  if (currentScrollY > lastScrollY) {
+    header.style.transform = 'translateY(-100%)';
+  } else {
+    header.style.transform = 'translateY(0)';
+  }
+  
+  lastScrollY = currentScrollY;
+});
+
+
+burger.addEventListener('click', () => {
+  menu.classList.toggle('opened')
+})
+
+dropdownItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const dropListMenu = item.querySelector('.drop-list-menu.w-dropdown-list')
+    
+    // Закрыть все открытые меню
+    document.querySelectorAll('.drop-list-menu.w-dropdown-list.opened').forEach(openedMenu => {
+      if (openedMenu !== dropListMenu) {
+        openedMenu.classList.remove('opened')
+      }
+    });
+
+    // Переключить класс opened у текущего меню
+    if (dropListMenu) {
+      dropListMenu.classList.add('opened')
+    }
+  })
+})
