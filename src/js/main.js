@@ -68,8 +68,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 
-
-
 const header = document.querySelector('.navbar'),
       headerOffset = header.offsetTop,
       burger = document.querySelector('.burger'),
@@ -82,7 +80,7 @@ const firstSectionHeight = document.querySelector('.section-hero').offsetHeight;
 window.addEventListener('scroll', () => {
   const currentScrollY = window.pageYOffset;
   let opacity = Math.min(currentScrollY / firstSectionHeight, 0.8);
-  
+
   header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
 
   if (currentScrollY > lastScrollY) {
@@ -90,7 +88,7 @@ window.addEventListener('scroll', () => {
   } else {
     header.style.transform = 'translateY(0)';
   }
-  
+
   lastScrollY = currentScrollY;
 });
 
@@ -102,7 +100,7 @@ burger.addEventListener('click', () => {
 dropdownItems.forEach(item => {
   item.addEventListener('click', () => {
     const dropListMenu = item.querySelector('.drop-list-menu.w-dropdown-list')
-    
+
     // Закрыть все открытые меню
     document.querySelectorAll('.drop-list-menu.w-dropdown-list.opened').forEach(openedMenu => {
       if (openedMenu !== dropListMenu) {
@@ -116,3 +114,36 @@ dropdownItems.forEach(item => {
     }
   })
 })
+
+
+var swiper = new Swiper(".mainHeroSwiper", {
+  slidesPerView: 1,
+  //spaceBetween: 30,
+  //centeredSlides: true,
+  grabCursor: true,
+  loop: true,
+
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+Fancybox.bind("[data-fancybox]", {
+  Carousel: {
+    infinite: false,
+  },
+});
