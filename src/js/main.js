@@ -49,9 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		})
 	})
 
-
-	// Табы
-	const 
+// Табы
+	const
 		tabs = document.querySelector('.tabs'),
 		accordion = document.querySelector('.accordion'),
 		tabItem = document.querySelectorAll('.tab-btn'),
@@ -156,46 +155,98 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	}
-})
+
 
 // init wow.js
-const wow = new WOW({ 
-	boxClass: 'wow',
-	animateClass: 'animate__animated',
-	mobile: false,
-}) 
+	const wow = new WOW({
+		boxClass: 'wow',
+		animateClass: 'animate__animated',
+		mobile: false,
+	})
 
-wow.init()
+	wow.init()
+
+	// Инициализация Fancybox
+	Fancybox.bind("[data-fancybox]", {
+		Carousel: {
+			infinite: false,
+		},
+	});
 
 
-const swiper = new Swiper(".mainHeroSwiper", {
-  slidesPerView: 1,
-  //spaceBetween: 30,
-  //centeredSlides: true,
-  grabCursor: true,
-  loop: true,
+	// Главный слайдер (баннер)
+	if (document.querySelector('.mainHeroSwiper')) {
+		const swiper = new Swiper(".mainHeroSwiper", {
+			simulateTouch: false,
+			loop: true,
 
-  autoplay: {
-    delay: 3500,
-    disableOnInteraction: false,
-  },
+			autoplay: {
+				delay: 3500,
+				disableOnInteraction: false,
+			},
 
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  },
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+				renderBullet: function (index, className) {
+					return '<span class="' + className + '">' + (index + 1) + "</span>";
+				},
+			},
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+	}
+
+	// Сладйер с программами на главной
+	if (document.querySelector('.main-programmes .slider-wrapper')) {
+		let sliderWrapper = document.querySelector('.main-programmes .slider-wrapper');
+		let slides = sliderWrapper.querySelectorAll('.slider-item');
+		let slidesCount = slides.length;
+
+		const programSlider = new Swiper(".slider-wrapper", {
+			wrapperClass: "slider-list",
+			slideClass: "slider-item",
+			navigation: {
+				nextEl: '.next-slide',
+				prevEl: '.prev-slide'
+			},
+			autoplay: slidesCount > 4 ? {
+				delay: 4000,
+				disableOnInteraction: false
+			} : false,
+			speed: 300,
+			slidesPerView: 'auto',
+			loop: slidesCount > 4
+		});
+	}
+
+	// Слайдер на странице Экскурсий
+	if (document.querySelector('.slider-exurs-wrapper')) {
+		document.querySelectorAll('.slider-exurs-wrapper').forEach(sliderWrapperElement => {
+			const sliderWrapper = sliderWrapperElement.querySelector('.mask-slider-exurs');
+			const slides = sliderWrapper.querySelectorAll('.slide-exurs');
+			const slidesCount = slides.length;
+
+			if (slidesCount > 3) {
+				sliderWrapper.classList.remove('less-than-4');
+
+				new Swiper(sliderWrapperElement, {
+					wrapperClass: "mask-slider-exurs",
+					slideClass: "slide-exurs",
+					navigation: {
+						nextEl: sliderWrapperElement.querySelector('.slide-nav-right'),
+						prevEl: sliderWrapperElement.querySelector('.slide-nav-left')
+					},
+					speed: 300,
+					slidesPerView: 'auto',
+					loop: false,
+				});
+			}
+		});
+	}
+
 });
 
-Fancybox.bind("[data-fancybox]", {
-  Carousel: {
-    infinite: false,
-  },
-});
