@@ -34,7 +34,7 @@
 										<div class="info-block-team smi">
 												<div class="text-name-team">Елена Калиновская</div>
 												<div class="text-direction-team">Пресс-секретарь музея</div>
-												<a data-w-id="75f70448-3a8c-a9a4-ea8c-2aea4213198c" href="#" class="button blue w-button">Написать</a>
+												<button data-fancybox data-src="#modal-form" class="button blue w-button">Написать</button>
 										</div>
 								</div>
 						</div>
@@ -79,9 +79,9 @@
 </div>
 
 	
-<div class="modal_form">
+<div id="modal-form" class="modal_form">
 		<div class="form-contact w-form">
-				<form id="wf-form--2" name="wf-form--2" data-name="Форма со страницы - СМИ" method="get" class="form">
+				<form data-name="Форма со страницы - СМИ" method="get" class="form">
 						<label for="field-2" class="field-label">Ваше имя</label>
 						<input class="text-field w-input" maxlength="256" name="field" data-name="Имя" placeholder="" type="text" id="field-2"/>
 						<label for="field-3" class="field-label">Ваша почта</label>
@@ -96,11 +96,11 @@
 				<div class="w-form-fail">
 						<div>Oops! Something went wrong while submitting the form.</div>
 				</div>
-				<a data-w-id="857966d8-4521-78c4-d254-d6c8f1a5c5e4" href="#" class="close-link w-inline-block">
+				<!-- <a href="#" class="close-link w-inline-block">
 						<img src="img/icons/close.svg" loading="lazy" alt="" class="image-8"/>
-				</a>
+				</a> -->
 		</div>
-		<div data-w-id="c2d805be-8155-5b57-6146-e8ba26d63d4d" class="close-bg"></div>
+		<!-- <div class="close-bg"></div> -->
 </div>
 
 @@include('html/footer.html')

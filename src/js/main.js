@@ -1,20 +1,18 @@
 'use strict'
 
-document.addEventListener("DOMContentLoaded", (event) => {
-
+document.addEventListener("DOMContentLoaded", () => {
 	const header = document.querySelector('.navbar'),
-		headerOffset = header.offsetTop,
-		burger = document.querySelector('.burger'),
-		menu = document.querySelector('.nav-menu'),
-		dropdownItems = document.querySelectorAll('.dropdown-menu');
+				headerOffset = header.offsetTop,
+				burger = document.querySelector('.burger'),
+				menu = document.querySelector('.nav-menu'),
+				dropdownItems = document.querySelectorAll('.dropdown-menu');
 
 	let lastScrollY = window.pageYOffset;
-	const firstSectionHeight = document.querySelector('.section-hero').offsetHeight;
 
 	window.addEventListener('scroll', () => {
 		const currentScrollY = window.pageYOffset
+		let firstSectionHeight = document.querySelector('.section-hero').offsetHeight
 		let opacity = Math.min(currentScrollY / firstSectionHeight, 0.8)
-
 		header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`
 
 		if (currentScrollY > lastScrollY) {
@@ -22,9 +20,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		} else {
 			header.style.transform = 'translateY(0)'
 		}
-
+		
 		lastScrollY = currentScrollY
+
+		console.log(lastScrollY)
 	})
+
 
 	burger.addEventListener('click', () => {
 		menu.classList.toggle('opened')
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	dropdownItems.forEach(item => {
 		item.addEventListener('click', () => {
 			const dropListMenu = item.querySelector('.drop-list-menu.w-dropdown-list')
-
+			
 			// Закрыть все открытые меню
 			document.querySelectorAll('.drop-list-menu.w-dropdown-list.opened').forEach(openedMenu => {
 				if (openedMenu !== dropListMenu) {
@@ -47,7 +48,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			}
 		})
 	})
-
 
 // Табы
 	const
@@ -156,6 +156,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		});
 	}
 
+
 // init wow.js
 	const wow = new WOW({
 		boxClass: 'wow',
@@ -171,6 +172,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			infinite: false,
 		},
 	});
+
 
 	// Главный слайдер (баннер)
 	if (document.querySelector('.mainHeroSwiper')) {

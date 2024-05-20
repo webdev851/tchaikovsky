@@ -6210,18 +6210,26 @@ blockquote {
 }
 
 .modal_form {
-	background-color: rgba(0, 0, 0, 0.8);
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
+	display: none;
+	// background-color: rgba(0, 0, 0, 0.8);
+	// justify-content: center;
+	// align-items: center;
+	// min-height: 100vh;
 	padding-left: 20px;
 	padding-right: 20px;
-	display: flex;
-	position: fixed;
-	top: 0%;
-	bottom: 0%;
-	left: 0%;
-	right: 0%;
+	// position: fixed;
+	// top: 0%;
+	// bottom: 0%;
+	// left: 0%;
+	// right: 0%;
+}
+
+.modal_form > .f-button.is-close-btn {
+	top: 5px;
+	right: 5px;
+	--f-button-color: #1f1f1e;
+	--f-button-hover-color: #1f1f1e;
+	// opacity: 0.5;
 }
 
 .form-contact {
