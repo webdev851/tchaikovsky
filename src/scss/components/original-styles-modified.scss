@@ -2156,19 +2156,18 @@ textarea.w-select {
 	outline: 0;
 }
 
+.w-tab-pane {
+	display: none;
+}
+
+.w-tab-pane.active {
+	display: block;
+}
+
 .w-tab-content {
 	display: block;
 	position: relative;
 	overflow: hidden;
-}
-
-.w-tab-pane {
-	display: none;
-	position: relative;
-}
-
-.w--tab-active {
-	display: block;
 }
 
 @media screen and (max-width: 479px) {
@@ -4024,6 +4023,9 @@ blockquote {
 	padding-right: 0;
 	transition: all 0.2s;
 	display: flex;
+	background: none;
+	border: none;
+	outline: none;
 }
 
 .dropdawn-info-toggle:hover {
@@ -4033,11 +4035,13 @@ blockquote {
 
 .dropdown-info-list {
 	width: 100%;
+	background-color: #fff;
+	display: none;
 }
 
-.dropdown-info-list.w--open {
-	background-color: #fff;
+.dropdown-info-list.active {
 	position: relative;
+	display: block;
 }
 
 .dropdown-info-list.dp {
@@ -4055,7 +4059,7 @@ blockquote {
 
 .heading-drop.detprogram {
 	color: var(--black);
-	white-space: pre-wrap;
+	white-space: initial;
 	width: 720px;
 	margin-right: 10px;
 	font-size: 24px;
@@ -4215,15 +4219,42 @@ blockquote {
 	height: 1px;
 }
 
+.tab-pane-time {
+	margin-top: 80px;
+	position: relative;
+	display: none;
+}
+
+.tab-pane-time.active {
+	display: block;
+}
+
+.tab-link-time.active {
+	opacity: 1;
+	transform: scale(1.4);
+	transition: 0.4s ease;
+}
+
+.tab-link-time.active .text-time-link {
+	color: var(--blue);
+	font-size: 20px;
+}
+
+.tab-link-time.active .text-caprion-time {
+	font-size: 14px;
+}
+
+.tab-link-years.active {
+	opacity: 1;
+	transform: scale(1.5);
+	transition: 0.4s ease;
+}
+
 .text-caprion-time {
 	color: var(--blue);
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 14px;
-}
-
-.tab-pane-time {
-	margin-top: 80px;
 }
 
 .text-link-years {
@@ -5530,7 +5561,7 @@ blockquote {
 	opacity: 1;
 }
 
-.tab-link-exurs.w--current {
+.tab-link-exurs.active {
 	opacity: 1;
 	background-color: #f5f7f9;
 }

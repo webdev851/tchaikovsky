@@ -79,6 +79,24 @@ a.afisha:hover {
 	}
 }
 
+.slider-item {
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+	.text-block-program {
+		z-index: 10;
+	}
+}
+
+.exkurs-block {
+	width: 100%;
+}
+
 // .w-dyn-item:nth-child(2n) .slide-card.blue {
 // 	background-color: hsla(201.64948453608247, 57.75%, 11.99%, 1);
 // }
