@@ -6,7 +6,7 @@
 <div class="section-hero page">
   <div class="container-hero w-container"></div>
 </div>
-<div class="section heading-page">
+<div class="section heading-page wow animate__animated animate__fadeInUp">
   <div class="container w-container">
     <div class="block-breadcumps">
       <a href="/" class="link-bread">Главная</a>
@@ -16,11 +16,11 @@
       <div class="name-page">Программы</div>
     </div>
     <div class="header-line">
-      <h2 class="h2 black">Программы</h2>
+      <h2 class="h2 black wow animate__animated animate__fadeInLeft">Программы</h2>
     </div>
   </div>
 </div>
-<div class="section">
+<div class="section wow animate__animated animate__fadeInUp">
   <div class="container w-container">
     <div class="header-line off">
       <h2 class="h2">Рекомендуем</h2>
@@ -776,40 +776,5 @@
     </div>
   </div>
 </div>
-
-<script>
-  function getMonthNumber(monthName) {
-    const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-    const monthIndex = months.indexOf(monthName.toLowerCase());
-    const paddedIndex = String(monthIndex + 1).padStart(2, '0');
-    return paddedIndex;
-  }
-
-  // Получаем все карточки афиш
-  const cards = document.querySelectorAll('.card-afisha-wrapper');
-
-  // Преобразуем название месяца в номер месяца в формате двух символов
-  cards.forEach(card=>{
-      const dateElem = card.querySelector('.time-text');
-      const dateStr = dateElem.textContent.trim();
-      const parts = dateStr.split(' ');
-      const year = '2023';
-      const month = getMonthNumber(parts[1]);
-      const day = parts[0];
-      const isoDateStr = `${year}-${month}-${day}`;
-      const date = new Date(isoDateStr);
-
-      // Получаем текущую дату
-      const now = new Date();
-
-      // Сравниваем даты
-      if (now > date) {
-        // Если текущая дата больше даты на афише, то скрываем кнопку "купить билет"
-        const buyTicketElem = card.querySelector('.ticket');
-        buyTicketElem.style.display = 'none';
-      }
-    }
-  );
-</script>
 
 @@include('html/footer.html')
