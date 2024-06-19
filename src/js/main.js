@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		// Инициализация внутренних табов для каждого верхнего таба
 		tabContent.forEach((tabContent) => {
 			if (tabItemInner.length > 0 && !accordion) {
-				tabItemInner[0].classList.add('active');
-				tabContentInner[0].classList.add('active');
+				tabItemInner[0].classList.add('active', 'w--current');
+				tabContentInner[0].classList.add('active', 'w--current');
 			}
 		});
 
@@ -76,12 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
 			const innerTabContent = document.getElementById(innerTabId);
 
 			if (!accordion) {
-				tabItemInner.forEach((btn) => btn.classList.remove('active'));
-				tabContentInner.forEach((content) => content.classList.remove('active'));
+				tabItemInner.forEach((btn) => btn.classList.remove('active', 'w--current'));
+				tabContentInner.forEach((content) => content.classList.remove('active', 'w--current'));
 
 				if (innerTabContent) {
-					innerTabContent.classList.add('active');
-					button.classList.add('active');
+					innerTabContent.classList.add('active', 'w--current');
+					button.classList.add('active', 'w--current');
 				}
 			} else {
 				// Закрыть все внутренние табы
@@ -90,24 +90,24 @@ document.addEventListener("DOMContentLoaded", () => {
 				const innerTabContents = parentTabContent.querySelectorAll('.tab-content-inner');
 
 				innerTabItems.forEach((btn) => {
-					if (btn !== button) btn.classList.remove('active');
+					if (btn !== button) btn.classList.remove('active', 'w--current');
 				});
 
 				innerTabContents.forEach((content) => {
-					if (content !== innerTabContent) content.classList.remove('active');
+					if (content !== innerTabContent) content.classList.remove('active', 'w--current');
 				});
 
 				if (innerTabContent) {
-					innerTabContent.classList.toggle('active');
-					button.classList.toggle('active');
+					innerTabContent.classList.toggle('active', 'w--current');
+					button.classList.toggle('active', 'w--current');
 				}
 			}
 		});
 
 		// Установка первого верхнего таба активным по умолчанию
 		if (tabItem.length > 0 && !accordion) {
-			tabItem[0].classList.add('active');
-			tabContent[0].classList.add('active');
+			tabItem[0].classList.add('active', 'w--current');
+			tabContent[0].classList.add('active', 'w--current');
 		}
 
 		// Обработчик событий для кликов по верхним табам
@@ -119,26 +119,26 @@ document.addEventListener("DOMContentLoaded", () => {
 			const topTabContent = document.getElementById(topTabId);
 
 			if (!accordion) {
-				tabItem.forEach((btn) => btn.classList.remove('active'));
-				tabContent.forEach((content) => content.classList.remove('active'));
+				tabItem.forEach((btn) => btn.classList.remove('active', 'w--current'));
+				tabContent.forEach((content) => content.classList.remove('active', 'w--current'));
 
 				if (topTabContent) {
-					topTabContent.classList.add('active');
-					button.classList.add('active');
+					topTabContent.classList.add('active', 'w--current');
+					button.classList.add('active', 'w--current');
 				}
 			} else {
 				// Закрыть все верхние табы
 				tabItem.forEach((btn) => {
-					if (btn !== button) btn.classList.remove('active');
+					if (btn !== button) btn.classList.remove('active', 'w--current');
 				});
 
 				tabContent.forEach((content) => {
-					if (content !== topTabContent) content.classList.remove('active');
+					if (content !== topTabContent) content.classList.remove('active', 'w--current');
 				});
 
 				if (topTabContent) {
-					topTabContent.classList.toggle('active');
-					button.classList.toggle('active');
+					topTabContent.classList.toggle('active', 'w--current');
+					button.classList.toggle('active', 'w--current');
 				}
 			}
 
@@ -147,11 +147,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			const innerTabContents = document.querySelectorAll(`#${topTabId} .tab-content-inner`);
 
 			if (innerTabItems.length > 0 && !accordion) {
-				innerTabItems.forEach((btn) => btn.classList.remove('active'));
-				innerTabContents.forEach((content) => content.classList.remove('active'));
+				innerTabItems.forEach((btn) => btn.classList.remove('active', 'w--current'));
+				innerTabContents.forEach((content) => content.classList.remove('active', 'w--current'));
 
-				innerTabItems[0].classList.add('active');
-				innerTabContents[0].classList.add('active');
+				innerTabItems[0].classList.add('active', 'w--current');
+				innerTabContents[0].classList.add('active', 'w--current');
 			}
 		});
 	}
@@ -248,5 +248,27 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+
+	if (document.querySelector('.contentPhotoSwiper')) {
+		const swiper = new Swiper(".contentPhotoSwiper", {
+			simulateTouch: false,
+			loop: true,
+
+			/*
+			autoplay: {
+				delay: 3500,
+				disableOnInteraction: false,
+			},
+			 */
+
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+	}
+
 });
+
+
 
