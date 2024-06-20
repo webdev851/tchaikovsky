@@ -515,6 +515,7 @@ main.exkursii-page {
 
 
 .user-content {
+
 	h2 {
 		margin-bottom: 40px;
 
@@ -539,6 +540,15 @@ main.exkursii-page {
 		& + .wp-block-columns {
 			//margin-top: 50px;
 		}
+
+		& + figure {
+			margin: 20px 0;
+
+			@media (min-width: 768px) {
+				margin: 30px 0;
+			}
+		}
+
 	}
 
 	img {
@@ -547,6 +557,36 @@ main.exkursii-page {
 			max-height: 340px;
 			object-position: center;
 			object-fit: cover;
+		}
+	}
+
+	ul {
+		li {
+			margin-bottom: 10px;
+
+			ul {
+				margin-top: 10px;
+			}
+		}
+
+		&.m-0, &.no-margin {
+			li {
+				margin: 0;
+			}
+		}
+	}
+
+	a {
+		mark {
+			text-decoration: underline;
+		}
+
+		&[href^="tel"] {
+			text-decoration: none;
+
+			mark {
+				text-decoration: none;
+			}
 		}
 	}
 
@@ -577,6 +617,65 @@ main.exkursii-page {
 
 	.garamond {
 		font-family: Garamond Original, sans-serif;
+
+		* {
+			font-family: inherit;
+		}
+	}
+
+	* {
+		&.m-0,
+		&.no-margin {
+			margin: 0;
+		}
+
+		&.pl {
+			padding-left: 40px;
+		}
+
+		&.tip {
+			border: 1px solid var(--blue);
+			border-radius: 6px;
+			padding: 20px;
+			font-size: 20px;
+		}
+
+		&.color-red {
+			color: #cf2e2e;
+		}
+		&.color-blue {
+			color: #205e81;
+		}
+
+		&.color-gray {
+			color: #1f1f1e;
+		}
+	}
+
+	.border {
+		border: 2px solid #bccfd9;
+		padding: 30px;
+	}
+
+	.wp-block-button, .wp-block-button__link {
+		color: #fff;
+		line-height: inherit;
+		cursor: pointer;
+		border: 0;
+		border-radius: 0;
+		background-color: var(--black);
+		padding: 15px 50px 12px;
+		font-size: 16px;
+		transition: all .2s;
+
+		&:hover, &:hover .wp-block-button__link {
+			background-color: var(--blue);
+			border-radius: 4px;
+		}
+
+		.wp-block-button__link {
+			padding: 0;
+		}
 	}
 }
 
@@ -718,6 +817,16 @@ main.content-page {
 
 			@media (min-width: 992px) {
 				font-size: 18px;
+			}
+		}
+	}
+}
+
+.wp-block-gutsliders-photo-carousel {
+	&.nav_outside {
+		&.nav_cc {
+			@media (max-width: 599px) {
+				padding: 0 20px;
 			}
 		}
 	}
